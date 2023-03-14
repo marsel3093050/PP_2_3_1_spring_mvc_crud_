@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit existing user</title>
+</head>
+<body>
+<form th:method="PUT" th:action="@{/}" th:object="${editedUser}">
+    <input type="hidden" th:field="*{id}">
+    <div class="field">
+        <label for="firstname">FirstName</label>
+        <input type="text" id="firstname" th:field="*{firstName}"/>
+    </div>
+    <div class="field">
+        <label for="lastName">Lastname</label>
+        <input type="text" id="lastName" th:field="*{lastName}"/>
+    </div>
+    <div class="field">
+        <label for="email">Email</label>
+        <input type="text" id="email" th:field="*{email}"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+</body>
+</html>
